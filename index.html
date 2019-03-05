@@ -78,7 +78,11 @@
             let something = document.getElementById('something').value
             let what = document.getElementById('what').value
             let time = 60 / something
+            if(something == '' || what == '') {
+                document.getElementById('calculated').disabled = true
+            }
             alert(`${time} minutes per ${what}.`)
+            console.log(`${something} ${what}`)
         }
     </script>
 </body>
