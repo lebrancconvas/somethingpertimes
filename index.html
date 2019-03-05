@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Something Per Times</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        header > h1 {
+            font-family: 'Gabriola';
+            font-size: 72px;
+            text-align: center;
+        }
+
+        .content > h3 {
+            font-family: 'Gabriola';
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .content > #something,
+        .content > #what {
+            border: 10px;
+            background: rgb(156, 243, 118);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 7%;
+            height: 5vh;
+            box-sizing: border-box;
+            box-shadow: 0.5px 0.5px 0.5px rgb(0,0,0,0.25)
+        }
+
+        #calculate {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            padding: 0.1px;
+            border: 10px;
+            background: green;
+            width: 10%;
+            height: 5%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.25);
+            cursor: pointer;
+            transform: scale(1);
+        }
+
+        #calculate:active {
+            transform: scale(.97);
+            box-shadow: 1px 1px 1px 1px rgb(0,0,0,0.25);
+        }
+
+        #calculate > h2 {
+            font-size: 25px;
+            font-family: 'Gabriola';
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Something Per Times</h1>
+    </header>
+    <div class="content">
+        <h3>Type Some Number to Calculate</h3>
+        <input type="number" name="something" id="something">
+        <h3>Type Something to tell that what do you wanna calcuate</h3>
+        <input type="text" name="what" id="what">
+    </div>
+    <div id="calculate" onclick="calculate()">
+        <h2>Calculate</h2>
+    </div>
+
+    <script>
+        function calculate() {
+            let something = document.getElementById('something').value
+            let what = document.getElementById('what').value
+            let time = 60 / something
+            alert(`${time} minutes per ${what}.`)
+        }
+    </script>
+</body>
+</html>
